@@ -1,0 +1,4 @@
+build/*
+frp/etc/frp/*
+frp/usr/bin/*
+out/*
