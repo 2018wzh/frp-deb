@@ -11,9 +11,9 @@ mkdir build out
 rm -rfv ./build/*
 rm -rfv ./frp/etc/frp/*
 rm -rfv ./frp/usr/bin/*
-rm -rfv ./DEBIAN/control
+rm -rfv ./frp/DEBIAN/control
 
-sed 's/%ARCH%/'${ARCH}'/g;s/%VERSION%/'${VERSION}'/g' DEBIAN/control.template | tee ./DEBIAN/control
+sed 's/%ARCH%/'${ARCH}'/g;s/%VERSION%/'${VERSION}'/g' frp/DEBIAN/control.template | tee ./frp/DEBIAN/control
 
 wget ${URL} -O ./build/frp.tar.gz
 
