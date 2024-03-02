@@ -1,9 +1,7 @@
 #!/bin/bash
 systemctl daemon-reload
 echo "Enabling Frp server daemon service."
-if [[ -f "/lib/systemd/system/frps.service" ]]; then
-    systemctl enable frps.service
-fi
+systemctl enable frps.service
 sed -i "s/log\.to\ \=\ \"\.\/frps\.log\"/log\.to\ \=\ \"\/var\/log\/frp\/frps\.log\"/g" "/etc/frp/frps.toml"
 sed -i "s/log\.to\ \=\ \"\.\/frpc\.log\"/log\.to\ \=\ \"\/var\/log\/frp\/frpc\.log\"/g" "/etc/frp/frpc.toml"
 mkdir -p /var/log/frp
