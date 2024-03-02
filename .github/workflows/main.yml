@@ -20,19 +20,12 @@ jobs:
        go-version: '1.20'
        
     - run: git clone https://github.com/dpkg123/frp-deb
-    - run: cd frp-deb && sed -i "s/\[ARCH\]/amd64/g" DEBIAN/control && cd ..
-    - run: rm -rf -v frp-deb/.git frp-deb/.github
-    - run: rm -rf -v frp-deb/LICENSE frp-deb/README.md frp-deb/*.sh
-    - run: wget https://github.com/fatedier/frp/raw/dev/conf/frpc_full_example.toml -O frp-deb/etc/frp/frpc.toml
-    - run: wget https://github.com/fatedier/frp/raw/dev/conf/frps_full_example.toml -O frp-deb/etc/frp/frps.toml
-    - run: go mod download 
-    - run: make frpc && make frps
-    - run: cp bin -rv frp-deb/usr/
-    - run: dpkg -b frp-deb
+    - run: cd frp-deb
+    - run: ./build/sh
     - name: Upload to Artifact 
       uses: actions/upload-artifact@v3
       with: 
        name: "deb"
-       path: "*.deb"
+       path: "out/*.deb"
        
     
