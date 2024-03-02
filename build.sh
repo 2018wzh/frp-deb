@@ -4,6 +4,8 @@ VERSION=$(wget -qO- -t1 -T2 "https://api.github.com/repos/fatedier/frp/releases/
 FILENAME="frp_"${VERSION}"_linux_"${ARCH}
 URL="https://github.com/fatedier/frp/releases/download/v"${VERSION}"/"${FILENAME}".tar.gz"
 
+mkdir build
+
 rm -rfv ./build/*
 rm -rfv ./frp/etc/frp/*
 rm -rfv ./frp/usr/bin/*

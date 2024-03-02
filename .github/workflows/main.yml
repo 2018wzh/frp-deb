@@ -21,7 +21,7 @@ jobs:
        
     - run: git clone https://github.com/dpkg123/frp-deb
     - run: cd frp-deb
-    - run: ./build/sh
+    - run: bash ./build.sh
     - name: Upload to Artifact 
       uses: actions/upload-artifact@v3
       with: 
