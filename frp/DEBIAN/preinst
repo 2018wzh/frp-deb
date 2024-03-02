@@ -2,3 +2,4 @@
 echo "Shutting down Frp server daemon service."
 if [[ -f "/lib/systemd/system/frps.service" ]] || [[ -f "/etc/systemd/system/frps.service" ]]; then
     systemctl stop frps
+fi
