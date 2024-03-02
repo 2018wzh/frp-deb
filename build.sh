@@ -1,6 +1,6 @@
 #!/bin/bash
 ARCH=amd64
-VERSION=$(wget -qO- -t1 -T2 "https://api.github.com/repos/fatedier/frp/releases/latest" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g;s/v//g')
+VERSION=$(wget -qO- -t1 -T2 "https://api.github.com/repos/fatedier/frp/releases/latest" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g'| sed 's/v//')
 FILENAME="frp_"${VERSION}"_linux_"${ARCH}
 URL="https://github.com/fatedier/frp/releases/download/v"${VERSION}"/"${FILENAME}".tar.gz"
 
