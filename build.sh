@@ -23,6 +23,8 @@ mv ${FILENAME}/*.toml ../frp/etc/frp/
 chmod +x ${FILENAME}/frp*
 mv ${FILENAME}/frp* ../frp/usr/bin/
 
+cd ..
+
 chmod 0755 frp/DEBIAN/*
 
 dpkg-deb --build frp out/$FILENAME.deb
